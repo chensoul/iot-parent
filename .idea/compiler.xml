@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iot-platform" />
+        <module name="iot-app" />
+        <module name="iot-common-web" />
+        <module name="iot-lock" />
+        <module name="iot-system" />
+        <module name="iot-admin" />
+        <module name="iot-user" />
+        <module name="iot-common-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="iot-admin" options="-parameters" />
+      <module name="iot-app" options="-parameters" />
+      <module name="iot-common" options="-parameters" />
+      <module name="iot-common-util" options="-parameters" />
+      <module name="iot-common-web" options="-parameters" />
+      <module name="iot-lock" options="-parameters" />
+      <module name="iot-modules" options="-parameters" />
+      <module name="iot-parent" options="-parameters" />
+      <module name="iot-platform" options="-parameters" />
+      <module name="iot-system" options="-parameters" />
+      <module name="iot-user" options="-parameters" />
+    </option>
+  </component>
+</project>

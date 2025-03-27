@@ -1,0 +1,9 @@
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/base/BaseEntity.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/config/interceptor/GuiguSaTokenConfigure.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/config/mybatisplus/MybatisPlusConfig.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/config/redis/RedisConfig.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/execption/GlobalExceptionHandler.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/execption/GuiguException.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/log/OperLogCache.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/log/OperatorType.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-common/iot-common-web/src/main/java/com/atguigu/iot/web/user/UserDeviceInterface.java

@@ -1,0 +1,12 @@
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/config/SaTokenConfigure.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/config/WxLoginMaServiceConfig.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/config/WxPropertiesConfig.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/mapper/UserDeviceMapper.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/mapper/UserInfoMapper.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/pojo/UserDevice.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/pojo/UserInfo.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/service/UserDeviceService.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/service/UserInfoService.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/service/impl/UserDeviceServiceImpl.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/service/impl/UserInfoServiceImpl.java
+/Users/chensoul/codes/github/iot-group/iot-parent/iot-modules/iot-user/src/main/java/com/atguigu/iot/user/vo/UserInfoVo.java

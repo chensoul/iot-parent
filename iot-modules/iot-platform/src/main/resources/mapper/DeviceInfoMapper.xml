@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.platform.mapper.DeviceInfoMapper">
+    <select id="pageDeviceInfoByQuery"
+            resultType="com.atguigu.iot.platform.pojo.DeviceInfo"
+            parameterType="com.atguigu.iot.platform.query.DeviceInfoQuery">
+        SELECT
+            t1.*
+        FROM
+            device_info t1
+                INNER JOIN product_info t2 ON t1.product_id = t2.id
+        <where>
+            <if test="vo.productName != null and vo.productName != ''">
+                AND t2.NAME LIKE CONCAT( '%', #{vo.productName}, '%' )
+            </if>
+            <if test="vo.name != null and vo.name != ''">
+                AND t1.NAME LIKE CONCAT( '%', #{vo.name}, '%' )
+            </if>
+            AND t1.del_flag = 0
+            AND t2.del_flag = 0
+        </where>
+        ORDER BY
+            t1.id DESC
+    </select>
+</mapper>

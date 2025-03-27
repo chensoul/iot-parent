@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.platform.mapper.DeviceEventDataMapper">
+
+    <select id="deviceEventDataList" resultType="com.atguigu.iot.platform.vo.DeviceEventDataVo">
+        SELECT
+            t1.*,
+            t2.NAME,
+            t2.identifier,
+            t2.event_type
+        FROM
+            device_event_data t1
+                INNER JOIN product_model_event t2 ON t1.model_event_id = t2.id
+        WHERE
+            t1.device_id = #{deviceId}
+        ORDER BY
+            t1.id DESC
+    </select>
+</mapper>

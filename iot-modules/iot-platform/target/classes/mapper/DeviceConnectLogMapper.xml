@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.platform.mapper.DeviceConnectLogMapper">
+    <select id="selectDeviceConnectLogCount" resultType="com.atguigu.iot.platform.vo.DataCountVo">
+        SELECT
+            DATE_FORMAT( dimension_time, '%Y-%m-%d %H:%00:%00' ) AS dimensionTime,
+            count( 1 ) AS num
+        FROM
+            device_connect_log
+        WHERE
+            STATUS = 1
+          AND dimension_time &gt;= #{startDate}
+          AND dimension_time &lt;= #{endDate}
+        GROUP BY
+            dimensionTime
+        ORDER BY
+            dimensionTime DESC
+    </select>
+</mapper>

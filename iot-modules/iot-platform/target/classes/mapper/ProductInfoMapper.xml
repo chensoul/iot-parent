@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.platform.mapper.ProductInfoMapper">
+    <select id="pageProductInfo"
+            resultType="com.atguigu.iot.platform.pojo.ProductInfo"
+            parameterType="com.atguigu.iot.platform.query.ProductInfoQuery">
+        SELECT
+            *
+        FROM
+            product_info
+        <where>
+            AND del_flag = 0
+            <if test="vo.name != null and vo.name != ''">
+                AND NAME LIKE CONCAT( '%', #{vo.name}, '%' )
+            </if>
+            <if test="vo.productKey != null and vo.productKey != ''">
+                AND product_key = #{vo.productKey}
+            </if>
+        </where>
+        ORDER BY
+            id DESC
+    </select>
+</mapper>

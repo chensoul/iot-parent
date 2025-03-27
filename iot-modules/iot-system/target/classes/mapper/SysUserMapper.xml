@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.system.mapper.SysUserMapper">
+    <!--分页条件查询用户列表-->
+    <select id="pageSysUserByQuery"
+            parameterType="com.atguigu.iot.system.query.SysUserQuery"
+            resultType="com.atguigu.iot.system.pojo.SysUser">
+        SELECT
+            id,
+            username,
+            PASSWORD,
+            NAME,
+            phone,
+            avatar,
+            description,
+            STATUS,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            remark,
+            del_flag
+        FROM
+            sys_user
+        <where>
+            <if test="query.keyword != null and query.keyword !='' ">
+                AND
+                (
+                username LIKE CONCAT( '%', #{query.keyword}, '%' )
+                OR NAME LIKE CONCAT( '%', #{query.keyword}, '%' )
+                OR phone LIKE CONCAT( '%', #{query.keyword}, '%' )
+                )
+            </if>
+            <if test="query.beginTime != null and query.beginTime !='' ">
+                AND
+                DATE_FORMAT(create_time, '%y%m%d' ) &gt;= DATE_FORMAT( #{query.beginTime}, '%y%m%d' )
+            </if>
+            <if test="query.endTime != null and query.endTime !='' ">
+                AND
+                DATE_FORMAT(create_time, '%y%m%d' ) &lt;= DATE_FORMAT(#{query.endTime}, '%y%m%d' )
+            </if>
+        </where>
+        ORDER BY
+            id
+    </select>
+
+    <select id="selectUserPerms" resultType="java.lang.String">
+        SELECT DISTINCT
+            t3.perms
+        FROM
+            sys_user_role t1
+                INNER JOIN sys_role_menu t2 ON t1.role_id = t2.role_id
+                INNER JOIN sys_menu t3 ON t2.menu_id = t3.id
+        WHERE
+            user_id = #{userId}
+          AND t3.status = 1
+          AND t1.del_flag = 0
+          AND t2.del_flag = 0
+          AND t3.del_flag = 0
+    </select>
+</mapper>

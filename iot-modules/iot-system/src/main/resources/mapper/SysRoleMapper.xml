@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.system.mapper.SysRoleMapper">
+    <select id="pageSysRoleByQuery"
+            parameterType="com.atguigu.iot.system.query.SysRoleQuery"
+            resultType="com.atguigu.iot.system.pojo.SysRole">
+        SELECT
+            id,
+            role_name,
+            role_code,
+            description,
+            create_by,
+            create_time,
+            update_by,
+            update_time,
+            del_flag,
+            remark
+        FROM
+            sys_role
+        <where>
+            <if test="query.roleName != null and query.roleName !='' ">
+                AND role_name LIKE CONCAT( '%', #{query.roleName}, '%' )
+            </if>
+            <if test="query.roleCode != null and query.roleCode !='' ">
+                AND role_code = #{query.roleCode}
+            </if>
+            AND del_flag = 0
+        </where>
+        ORDER BY
+            id
+    </select>
+
+    <select id="selectUserRoleByUserId" resultType="com.atguigu.iot.system.pojo.SysRole">
+        SELECT
+            t2.id,
+            t2.role_name,
+            t2.role_code,
+            t2.description
+        FROM
+            sys_user_role t1
+                INNER JOIN sys_role t2 ON t1.role_id = t2.id
+        WHERE
+            user_id = #{userId}
+          AND t1.del_flag = 0
+          AND t2.del_flag = 0
+    </select>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.iot.system.mapper.SysLoginLogMapper">
+    <select id="selectSysLoginLogByVo"
+            resultType="com.atguigu.iot.system.pojo.SysLoginLog"
+            parameterType="com.atguigu.iot.system.vo.SysLoginLogVo">
+        SELECT
+        *
+        FROM
+            sys_login_log
+        <where>
+            <if test="vo.username != null and vo.username !=''">
+                AND username LIKE CONCAT( '%', #{vo.username}, '%' )
+            </if>
+            <if test="vo.beginTime != null and vo.beginTime !=''">
+                AND DATE_FORMAT( create_time, '%y%m%d' ) &gt;= DATE_FORMAT( #{vo.beginTime}, '%y%m%d' )
+            </if>
+            <if test="vo.endTime != null and vo.endTime !=''">
+                AND DATE_FORMAT( create_time, '%y%m%d' ) &lt;= DATE_FORMAT( #{vo.endTime}, '%y%m%d' )
+            </if>
+                AND del_flag = 0
+        </where>
+        ORDER BY
+        create_time DESC
+    </select>
+</mapper>
