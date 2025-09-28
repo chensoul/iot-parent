@@ -22,7 +22,7 @@
         <fastjson.version>2.0.59.android8</fastjson.version>
         <jodatime.version>2.10.1</jodatime.version>
         <minio.version>8.2.0</minio.version>
-        <mqttv3.version>1.2.2</mqttv3.version>
+        <mqttv3.version>1.2.5</mqttv3.version>
         <easyexcel.version>3.1.0</easyexcel.version>
         <hutool.version>5.8.40</hutool.version>
         <weixin-java-miniapp.version>4.1.0</weixin-java-miniapp.version>
