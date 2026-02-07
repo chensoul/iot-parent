@@ -19,7 +19,7 @@
         <lombok.version>1.18.42</lombok.version>
         <mysql.version>8.0.33</mysql.version>
         <knife4j.version>4.5.0</knife4j.version>
-        <fastjson.version>2.0.60.android8</fastjson.version>
+        <fastjson.version>2.0.61</fastjson.version>
         <jodatime.version>2.14.0</jodatime.version>
         <minio.version>8.6.0</minio.version>
         <mqttv3.version>1.2.5</mqttv3.version>
